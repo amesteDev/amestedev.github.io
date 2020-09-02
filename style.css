@@ -20,12 +20,31 @@ p{
 	font-size: 1.4em;
 }
 
-.contain{
+.threeanim{
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+	max-width: 900px;
+	margin: auto;
+}
+
+.containleft{
+	grid-column: 1/2;
+}
+
+.containmid{
+	grid-column: 2/3;
+}
+
+.containright{
+	grid-column: 3/4;
+}
+
+.containleft, .containmid, .containright{
 	padding: 1em;
 	display: grid;
 	grid-template-columns: 33% 33% 33%;
-	max-width: 350px;
 	margin: auto;
+	animation: moveother 7s infinite;
 }
 
 .one {
@@ -45,13 +64,29 @@ p{
 }
 
 .moveit {
-	width: 100px;
-	height: 100px;
-	background-color: #b9babe;
-	animation: moooove 3s infinite;
+	width: 75px;
+	height: 75px;
+	background-color: #a5e7e2;
+	animation: moooove 5s infinite;
 	margin: auto;
 	border-radius: 25%;
 	margin-bottom: 5px;
+}
+
+.left{
+	background-color: rgb(46, 138, 115);
+	width: 75px;
+	height: 75px;
+	animation: moooove 2s infinite;
+	border-radius: 25%;
+}
+
+.right{
+	background-color: #77e9d6;
+	width: 75px;
+	height: 75px;
+	animation: moooove 4s infinite;
+	border-radius: 25%;
 }
 
 @keyframes moooove {
@@ -60,3 +95,8 @@ p{
     to { -webkit-transform: rotate(360deg);}
 }
 
+@keyframes moveother {
+	from { -webkit-transform: rotate(360deg);
+    }
+    to { -webkit-transform: rotate(0deg);}
+}
